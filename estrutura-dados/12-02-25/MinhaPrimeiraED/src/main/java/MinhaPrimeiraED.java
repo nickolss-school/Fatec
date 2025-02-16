@@ -40,7 +40,7 @@ public class MinhaPrimeiraED {
                     totalDeObjetos++;
                 }
 
-            } else if (!posicaoOcupada(posicao) && !cheio()) {
+            } else if (!cheio()) {
                 for (int i = totalDeObjetos; i > posicao; i--) {
                     objetos[i] = objetos[i - 1];
                 }
