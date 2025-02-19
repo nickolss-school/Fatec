@@ -1,5 +1,5 @@
 public class MinhaPrimeiraED {
-    public Object[] objetos = new Object[10];
+    private Object[] objetos = new Object[10];
     public int totalDeObjetos = 0;
 
     /*
