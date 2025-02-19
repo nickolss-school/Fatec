@@ -32,7 +32,7 @@ public class Main {
         // Teste 6: Teste de capacidade dinâmica
         System.out.println("Teste 6: Teste de capacidade dinâmica");
         for (int i = 0; i < 15; i++) {
-            lista.adiciona("Elemento-" + i);
+            lista.adiciona(i, "Elemento-" + i);
         }
         exibirLista(lista);
 
