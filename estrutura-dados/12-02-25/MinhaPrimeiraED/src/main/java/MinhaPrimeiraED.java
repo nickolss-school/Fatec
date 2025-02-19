@@ -80,11 +80,11 @@ public class MinhaPrimeiraED {
     */
     public void remove(int posicao) {
         if (posicaoValida(posicao) && posicaoOcupada(posicao)) {
-            for (int i = posicao; i < totalDeObjetos - 1; i++) {
+            for (int i = posicao; i < objetos.length - 1; i++) {
                 objetos[i] = objetos[i + 1];
             }
 
-            objetos[totalDeObjetos - 1] = null;
+            objetos[objetos.length - 1] = null;
             totalDeObjetos--;
         }
     }
