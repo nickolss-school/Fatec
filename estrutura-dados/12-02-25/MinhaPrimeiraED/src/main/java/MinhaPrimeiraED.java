@@ -17,6 +17,8 @@ public class MinhaPrimeiraED {
             }
 
             totalDeObjetos++;
+        }else{
+            System.out.println("Vetor cheio, impossível de adicionar novo objeto.")
         }
     }
 
