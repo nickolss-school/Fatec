@@ -8,7 +8,7 @@ public class MinhaPrimeiraED {
     Caso não haja mais posições válidas, não adicionar.
     */
     public void adiciona(Object objeto) {
-        if (!cheio()) {
+        if (totalDeObjetos < objetos.length) {
             for(int i = 0; i < objetos.length; i++){
                 if(!posicaoOcupada(i)){
                     objetos[i] = objeto;
