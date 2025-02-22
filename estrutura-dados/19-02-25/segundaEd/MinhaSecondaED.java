@@ -1,11 +1,13 @@
-package org.example;
-
-public class MinhaSecondaED {
+public class MinhaSegundaED {
     String[] nomes = new String[26];
     int quantidadeNomes = 0;
 
+    public boolean validarNome(String nome){
+        return nome != null && !nome.isEmpty();
+    }
+
     public int getIndice(String nome) {
-        if (nome == null || nome.isEmpty()) {
+        if(validarNome(nome)){
             return -1;
         }
 
@@ -45,9 +47,15 @@ public class MinhaSecondaED {
     public void adicionar(String nome) {
         int posicao = getIndice(nome);
 
-        if (!posicaoOcupada(posicao)) {
+        if (posicao == -1) {
+            throw new IllegalArgumentException("Nome inválido ou letra inicial não mapeada.");
+        }
+
+        if (nomes[posicao] == null) {
             nomes[posicao] = nome;
             quantidadeNomes++;
+        } else {
+            System.out.println("Posição já ocupada por outro nome.");
         }
     }
 
@@ -55,10 +63,14 @@ public class MinhaSecondaED {
         return nomes[posicao] != null && nomes[posicao] != "";
     }
 
-
     public void remover(String nome) {
         int posicao = getIndice(nome);
-        nomes[posicao] = "";
+
+        if (posicao == -1 || nomes[posicao] == null) {
+            throw new IllegalArgumentException("Nome não encontrado para remoção.");
+        }
+
+        nomes[posicao] = null;
         quantidadeNomes--;
     }
 
@@ -66,15 +78,15 @@ public class MinhaSecondaED {
     public boolean contem(String nome) {
         int indice = getIndice(nome);
 
-        return nomes[indice] != null && nomes[indice] != "";
+        return indice != -1 && nomes[indice] != null;
     }
 
-    public String getNome(int posicao){
-        if(posicaoOcupada(posicao)){
-            return nomes[posicao];
-        }else {
-            return "";
+    public String getNome(int posicao) {
+        if (posicao < 0 || posicao >= 26) {
+            throw new ArrayIndexOutOfBoundsException("Posição fora do intervalo.");
         }
+
+        return nomes[posicao] != null ? nomes[posicao] : "Posição vazia";
     }
 
     public int totalNomes() {
