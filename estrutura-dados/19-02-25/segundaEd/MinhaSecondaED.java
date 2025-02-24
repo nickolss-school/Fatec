@@ -3,8 +3,8 @@ public class MinhaSegundaED {
     int quantidadeNomes = 0;
 
     public boolean validarNome(String nome){
-        return nome != null && !nome.isEmpty();
-    }z
+        return nome != null && !nome.isBlank();
+    }
 
     public int getIndice(String nome) {
         if(!validarNome(nome)){
@@ -60,7 +60,7 @@ public class MinhaSegundaED {
     }
 
     public boolean posicaoOcupada(int posicao) {
-        return nomes[posicao] != null && nomes[posicao] != "";
+        return nomes[posicao] != null && !nomes[posicao].isBlank();
     }
 
     public void remover(String nome) {
