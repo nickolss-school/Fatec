@@ -66,11 +66,11 @@ public class MinhaSegundaED {
     public void remover(String nome) {
         int posicao = getIndice(nome);
 
-        if (posicao == -1 || nomes[posicao] == null) {
-            throw new IllegalArgumentException("Nome não encontrado para remoção.");
+        if (posicao == -1 || nomes[posicao] == null || !nome.equals(getNome(posicao))) {
+            throw new IllegalArgumentException("Nome não encontrado para remoção ou nome digitado diferente do armazenado.");
         }
 
-        nomes[posicao] = null;
+        nomes[posicao] = "";
         quantidadeNomes--;
     }
 
