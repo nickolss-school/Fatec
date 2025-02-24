@@ -77,8 +77,11 @@ public class MinhaSegundaED {
 
     public boolean contem(String nome) {
         int indice = getIndice(nome);
-
-        return indice != -1 && nomes[indice] != null;
+        try {
+            return nomes[indice].equals(nome); //Verifica se o nome digitado está no vetor de nomes
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            throw new ArrayIndexOutOfBoundsException("Nome inválido"); //Verifica se o índice é diferente de -1
+        }
     }
 
     public String getNome(int posicao) {
