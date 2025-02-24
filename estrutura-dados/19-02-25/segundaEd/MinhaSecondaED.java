@@ -4,7 +4,7 @@ public class MinhaSegundaED {
 
     public boolean validarNome(String nome){
         return nome != null && !nome.isEmpty();
-    }
+    }z
 
     public int getIndice(String nome) {
         if(!validarNome(nome)){
@@ -51,7 +51,7 @@ public class MinhaSegundaED {
             throw new IllegalArgumentException("Nome inválido ou letra inicial não mapeada.");
         }
 
-        if (!posicaoOcupada(posicao)) {
+        if (posicaoOcupada(posicao)) {
             nomes[posicao] = nome.toLowerCase(); // Deixa o nome em lowerCase para facilitar em possível exclusão futura
             quantidadeNomes++;
         } else {
