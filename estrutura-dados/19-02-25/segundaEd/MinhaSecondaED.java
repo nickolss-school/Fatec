@@ -1,6 +1,6 @@
 public class MinhaSegundaED {
-    String[] nomes = new String[26];
-    int quantidadeNomes = 0;
+    private String[] nomes = new String[26];
+    public int quantidadeNomes = 0;
 
     public boolean validarNome(String nome){
         return nome != null && !nome.isBlank();
@@ -59,7 +59,7 @@ public class MinhaSegundaED {
         }
     }
 
-    public boolean posicaoOcupada(int posicao) {
+    private boolean posicaoOcupada(int posicao) {
         return nomes[posicao] != null && !nomes[posicao].isBlank();
     }
 
