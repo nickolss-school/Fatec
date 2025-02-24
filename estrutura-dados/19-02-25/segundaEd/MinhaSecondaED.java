@@ -52,10 +52,10 @@ public class MinhaSegundaED {
         }
 
         if (posicaoOcupada(posicao)) {
+            System.out.println("Posição já ocupada por outro nome.");
+        } else {
             nomes[posicao] = nome.toLowerCase(); // Deixa o nome em lowerCase para facilitar em possível exclusão futura
             quantidadeNomes++;
-        } else {
-            System.out.println("Posição já ocupada por outro nome.");
         }
     }
 
